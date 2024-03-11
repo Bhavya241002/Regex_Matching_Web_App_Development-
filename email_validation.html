@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        p.error {
+            color: red;
+        }
+        p.success {
+            color: green;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Email Validation Result</h1>
+    <p>Email: {{ email }}</p>
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% else %}
+        <p class="success">{{ match }}</p>
+    {% endif %}
+    <a href="/">Go Back</a>
+</body>
+</html>

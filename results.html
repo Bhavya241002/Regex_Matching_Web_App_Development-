@@ -1,0 +1,67 @@
+<!-- templates/results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Matcher - Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 50px;
+            box-sizing: border-box;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Matches Found</h1>
+        <p>String: {{ text }}</p>
+        <p>Regex Pattern: {{ pattern }}</p>
+        <p>Total Matches: {{ matches|length }}</p>
+        <ul>
+            {% for match in matches %}
+                <li>{{ match }}</li>
+            {% endfor %}
+        </ul>
+        <hr>
+        <form action="/" method="get">
+            <button type="submit">Back</button>
+        </form>
+    </div>
+</body>
+</html>
